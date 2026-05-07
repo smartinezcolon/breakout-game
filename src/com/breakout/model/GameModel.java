@@ -26,7 +26,7 @@ public class GameModel {
     public void initGame() {
         score = 0;
         lives = 3;
-        state = GameState.START;
+        state = GameState.TITLE;
         
         paddle = new Paddle(GAME_WIDTH / 2 - 50, GAME_HEIGHT - 50);
         ball = new Ball(GAME_WIDTH / 2 - 8, GAME_HEIGHT - 50 - 16); 

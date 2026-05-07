@@ -35,11 +35,8 @@ The player controls a paddle at the bottom of the screen and uses it to bounce a
   - Listens for `Spacebar` to launch the ball from the resting state.
   - Listens for `R` to restart the game entirely after a win or loss.
 
-## Added Features (For my future add-ons)
-- *Power-ups*: Extra lives, multi-ball, wider paddle, or faster ball speed.
-- *Levels*: Progressing to a new, harder level layout after clearing the current one.
-- *Sound Effects*: Add sound effects for bouncing on walls, breaking a brick, and losing a life.
-- *High Scores*: Saving the best score persistently.
+## Added Features
+- Added Title screen with game name and start instructions
 
 ## Done
 - [x] Create GameState enum

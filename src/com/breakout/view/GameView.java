@@ -72,6 +72,21 @@ public class GameView extends JPanel {
         String message = "";
         String subMessage = "";
         
+        if (state == GameState.TITLE) {
+            g2d.setColor(Color.WHITE);
+            g2d.setFont(new Font("Arial", Font.BOLD, 80));
+            FontMetrics metrics = g2d.getFontMetrics();
+            int x = (GameModel.GAME_WIDTH - metrics.stringWidth("BREAKOUT")) / 2;
+            int y = GameModel.GAME_HEIGHT / 2 - 40;
+            g2d.drawString("BREAKOUT", x, y);
+            
+            g2d.setFont(new Font("Arial", Font.PLAIN, 20));
+            metrics = g2d.getFontMetrics();
+            int subX = (GameModel.GAME_WIDTH - metrics.stringWidth("Press SPACE to start")) / 2;
+            g2d.drawString("Press SPACE to start", subX, y + 60);
+            return;
+        }
+        
         if (state == GameState.START) {
             message = "Press SPACE to Launch";
         } else if (state == GameState.GAME_OVER) {

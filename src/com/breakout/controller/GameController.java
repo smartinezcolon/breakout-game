@@ -33,7 +33,7 @@ public class GameController extends KeyAdapter implements ActionListener {
         if (model.getState() == GameState.PLAYING || model.getState() == GameState.START) {
             updateGame();
             view.repaint();
-        } else if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY) {
+        } else if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY || model.getState() == GameState.TITLE) {
             view.repaint(); // Just to draw the overlay
         }
     }
@@ -130,7 +130,11 @@ public class GameController extends KeyAdapter implements ActionListener {
         } else if (key == KeyEvent.VK_RIGHT) {
             model.movePaddleRight();
         } else if (key == KeyEvent.VK_SPACE) {
-            model.launchBall();
+            if (model.getState() == GameState.TITLE) {
+                model.setState(GameState.START);
+            } else {
+                model.launchBall();
+            }
         } else if (key == KeyEvent.VK_R) {
             if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY) {
                 model.initGame();
