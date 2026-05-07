@@ -38,6 +38,7 @@ The player controls a paddle at the bottom of the screen and uses it to bounce a
 ## Added Features
 - Added Title screen with game name and start instructions
 - Added sound effects for brick hits, life lost, and game over
+- Added a Pause feature (press 'P' during gameplay)
 
 ## Done
 - [x] Create GameState enum

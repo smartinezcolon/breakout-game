@@ -89,6 +89,9 @@ public class GameView extends JPanel {
         
         if (state == GameState.START) {
             message = "Press SPACE to Launch";
+        } else if (state == GameState.PAUSED) {
+            message = "PAUSED";
+            subMessage = "Press 'P' to Resume";
         } else if (state == GameState.GAME_OVER) {
             message = "Game Over";
             subMessage = "Press 'R' to Restart";
