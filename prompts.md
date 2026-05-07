@@ -84,5 +84,30 @@ I want a simple arcade style color scheme. The background should be black, the p
 
 After this it created a implementation plan and asked for my approval. Which after I reviewed it, I approved it and i started building the game using that plan.
 
-#Project Start
+#Specifications build
+
+Prompt:
+
+I want you to write a one-page specification for my Java Swing MVC Breakout game in README.md.
+
+Include these sections:Gameplay, Model — GameModel.javaView — GameView.java, Controller — GameController.java, Added Features (For my future add-ons), Done
+
+# Features/Polish build
+
+Prompt 1: 
+I would like to add Title screen with the game name and "Press SPACE to start"
+
+It created the title screen with the game displaying "Breakout" and it also added a "Press SPACE to start" message.
+
+It made the game look more professional, and had a proper start screen, rather than just launching into the game. 
+
+Prompt 2:
+I would like to add a sound effect when the ball hits a brick. 
+
+This generated a sound file which everytime the ball hits a brick, it makes a "boop" sound. 
+
+From this I wanted to add a gameover sound effect, and a life lost sound effect.
+
+Prompt 3:
+I would like to add a gameover sound effect, and life lost sound effect.
 

@@ -6,6 +6,7 @@ import com.breakout.model.GameModel;
 import com.breakout.model.GameState;
 import com.breakout.model.Paddle;
 import com.breakout.view.GameView;
+import com.breakout.util.SoundManager;
 
 import javax.swing.Timer;
 import java.awt.Rectangle;
@@ -18,10 +19,12 @@ public class GameController extends KeyAdapter implements ActionListener {
     private GameModel model;
     private GameView view;
     private Timer timer;
+    private SoundManager soundManager;
 
     public GameController(GameModel model, GameView view) {
         this.model = model;
         this.view = view;
+        this.soundManager = new SoundManager();
         
         view.addKeyListener(this);
         timer = new Timer(16, this); // ~60fps
@@ -107,6 +110,7 @@ public class GameController extends KeyAdapter implements ActionListener {
                     brick.setDestroyed(true);
                     model.addScore(brick.getPoints());
                     model.checkWinCondition();
+                    soundManager.playBrickHit();
                     
                     // Simple bounce logic: mostly bounce vertically unless hitting sides
                     int ballCenter = ball.getX() + ball.getRadius();
