@@ -111,3 +111,4 @@ From this I wanted to add a gameover sound effect, and a life lost sound effect.
 Prompt 3:
 I would like to add a gameover sound effect, and life lost sound effect.
 
+This added 2 new sound effects, life_lost.wav and a game_over.wav. 

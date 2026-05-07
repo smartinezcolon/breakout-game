@@ -7,22 +7,44 @@ import java.io.File;
 
 public class SoundManager {
     private Clip brickHitClip;
+    private Clip lifeLostClip;
+    private Clip gameOverClip;
 
     public SoundManager() {
+        brickHitClip = loadClip("assets/brick_hit.wav");
+        lifeLostClip = loadClip("assets/life_lost.wav");
+        gameOverClip = loadClip("assets/game_over.wav");
+    }
+
+    private Clip loadClip(String filename) {
         try {
-            File soundFile = new File("assets/brick_hit.wav");
+            File soundFile = new File(filename);
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-            brickHitClip = AudioSystem.getClip();
-            brickHitClip.open(audioIn);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioIn);
+            return clip;
         } catch (Exception e) {
-            System.err.println("Could not load sound: " + e.getMessage());
+            System.err.println("Could not load sound " + filename + ": " + e.getMessage());
+            return null;
         }
     }
 
     public void playBrickHit() {
-        if (brickHitClip != null) {
-            brickHitClip.setFramePosition(0);
-            brickHitClip.start();
+        playClip(brickHitClip);
+    }
+
+    public void playLifeLost() {
+        playClip(lifeLostClip);
+    }
+
+    public void playGameOver() {
+        playClip(gameOverClip);
+    }
+
+    private void playClip(Clip clip) {
+        if (clip != null) {
+            clip.setFramePosition(0);
+            clip.start();
         }
     }
 }

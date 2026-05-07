@@ -78,6 +78,11 @@ public class GameController extends KeyAdapter implements ActionListener {
         // Check bottom collision (lose life)
         if (ball.getY() >= GameModel.GAME_HEIGHT) {
             model.loseLife();
+            if (model.getState() == GameState.GAME_OVER) {
+                soundManager.playGameOver();
+            } else {
+                soundManager.playLifeLost();
+            }
             return;
         }
 

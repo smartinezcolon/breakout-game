@@ -37,7 +37,7 @@ The player controls a paddle at the bottom of the screen and uses it to bounce a
 
 ## Added Features
 - Added Title screen with game name and start instructions
-- Added sound effect when the ball hits a brick
+- Added sound effects for brick hits, life lost, and game over
 
 ## Done
 - [x] Create GameState enum
