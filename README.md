@@ -39,6 +39,7 @@ The player controls a paddle at the bottom of the screen and uses it to bounce a
 - Added Title screen with game name and start instructions
 - Added sound effects for brick hits, life lost, and game over
 - Added a Pause feature (press 'P' during gameplay) with a 3-second resume countdown, restart ('R'), and main menu ('M') options
+- Added main menu ('M') and restart ('R') options to Game Over and Victory screens
 
 ## Done
 - [x] Create GameState enum

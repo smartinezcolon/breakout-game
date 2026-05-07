@@ -97,10 +97,10 @@ public class GameView extends JPanel {
             message = String.valueOf(seconds);
         } else if (state == GameState.GAME_OVER) {
             message = "Game Over";
-            subMessage = "Press 'R' to Restart";
+            subMessage = "R: Restart | M: Main Menu";
         } else if (state == GameState.VICTORY) {
             message = "You Win!";
-            subMessage = "Press 'R' to Restart";
+            subMessage = "R: Restart | M: Main Menu";
         }
 
         if (!message.isEmpty()) {
