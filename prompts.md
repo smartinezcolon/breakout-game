@@ -112,3 +112,22 @@ Prompt 3:
 I would like to add a gameover sound effect, and life lost sound effect.
 
 This added 2 new sound effects, life_lost.wav and a game_over.wav. 
+
+Prompt 3: 
+
+I would like to add a pause feature in-game by selecting 'P' on the keyboard.
+
+This feature worked as prompted, however I did not like how the ball continues right away. I would like a 3 second countdown to resume gameplay, and while being paused id like a return to main menu feature. 
+
+So I will prompt it to fix it. 
+
+Prompt 4:
+
+Could you add a 3-second countdown to resume gameplay after unpausing the game. I would also like to add a return to mainmenu 'm' while being paused, and a 'r' to restart while being paused
+
+This added the features I was missing while being paused. It looks more polished and functional. 
+
+Prompt 5:
+In the You Win screen, could you add a main menu 'm' option, along with the 'r' to restart option?
+
+I added this because the only way to get back to the mainmenu was to restart the game, then click pause, and then return to menu. Which for future purposes, would make sense to have that option. 

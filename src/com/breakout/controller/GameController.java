@@ -36,6 +36,12 @@ public class GameController extends KeyAdapter implements ActionListener {
         if (model.getState() == GameState.PLAYING || model.getState() == GameState.START) {
             updateGame();
             view.repaint();
+        } else if (model.getState() == GameState.RESUMING) {
+            model.decrementResumeCountdown();
+            if (model.getResumeCountdown() <= 0) {
+                model.setState(GameState.PLAYING);
+            }
+            view.repaint();
         } else if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY || model.getState() == GameState.TITLE || model.getState() == GameState.PAUSED) {
             view.repaint(); // Just to draw the overlay
         }
@@ -148,10 +154,16 @@ public class GameController extends KeyAdapter implements ActionListener {
             if (model.getState() == GameState.PLAYING) {
                 model.setState(GameState.PAUSED);
             } else if (model.getState() == GameState.PAUSED) {
-                model.setState(GameState.PLAYING);
+                model.setState(GameState.RESUMING);
+                model.setResumeCountdown(180); // 3 seconds at 60 fps
             }
         } else if (key == KeyEvent.VK_R) {
-            if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY) {
+            if (model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY || model.getState() == GameState.PAUSED) {
+                model.initGame();
+                model.setState(GameState.START);
+            }
+        } else if (key == KeyEvent.VK_M) {
+            if (model.getState() == GameState.PAUSED || model.getState() == GameState.GAME_OVER || model.getState() == GameState.VICTORY) {
                 model.initGame();
             }
         }

@@ -91,7 +91,10 @@ public class GameView extends JPanel {
             message = "Press SPACE to Launch";
         } else if (state == GameState.PAUSED) {
             message = "PAUSED";
-            subMessage = "Press 'P' to Resume";
+            subMessage = "P: Resume | R: Restart | M: Main Menu";
+        } else if (state == GameState.RESUMING) {
+            int seconds = (int) Math.ceil(model.getResumeCountdown() / 60.0);
+            message = String.valueOf(seconds);
         } else if (state == GameState.GAME_OVER) {
             message = "Game Over";
             subMessage = "Press 'R' to Restart";

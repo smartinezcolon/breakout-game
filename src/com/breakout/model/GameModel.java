@@ -12,6 +12,7 @@ public class GameModel {
     private Paddle paddle;
     private Ball ball;
     private List<Brick> bricks;
+    private int resumeCountdown;
     
     public static final int GAME_WIDTH = 800;
     public static final int GAME_HEIGHT = 600;
@@ -108,4 +109,8 @@ public class GameModel {
     public Paddle getPaddle() { return paddle; }
     public Ball getBall() { return ball; }
     public List<Brick> getBricks() { return bricks; }
+    
+    public int getResumeCountdown() { return resumeCountdown; }
+    public void setResumeCountdown(int ticks) { this.resumeCountdown = ticks; }
+    public void decrementResumeCountdown() { this.resumeCountdown--; }
 }
